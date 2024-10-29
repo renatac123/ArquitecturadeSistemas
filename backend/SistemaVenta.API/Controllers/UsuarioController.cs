@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using SistemaVenta.BLL.Servicios.Contrato;
 using SistemaVenta.DTO;
 using SistemaVenta.API.Utilidad;
-
-
+using SistemaVenta.Utility;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SistemaVenta.API.Controllers
 {
@@ -13,12 +13,13 @@ namespace SistemaVenta.API.Controllers
     public class UsuarioController : ControllerBase
     {
         private readonly IUsuarioService _usuarioServicio;
+        private readonly Token _token;
 
-        public UsuarioController(IUsuarioService usuarioServicio)
+        public UsuarioController(IUsuarioService usuarioServicio, Token token)
         {
             _usuarioServicio = usuarioServicio;
+            _token = token;
         }
-
 
         [HttpGet]
         [Route("Lista")]
@@ -41,18 +42,36 @@ namespace SistemaVenta.API.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         [Route("IniciarSesion")]
         public async Task<IActionResult> IniciarSesion([FromBody] LoginDTO login)
         {
             var rsp = new Response<SesionDTO>();
 
+
             try
             {
+                /*
                 rsp.status = true;
-                rsp.value = await _usuarioServicio.ValidarCredenciales(login.Correo, login.Clave);
+                rsp.value = await _usuarioServicio.ValidarCredenciales(login.Correo, login.Clave);*/
+                // Validar las credenciales del usuario
+                var usuarioValido = await _usuarioServicio.ValidarCredenciales(login.Correo, _token.encriptarSHA256(login.Clave));
+
+                if (usuarioValido == null)
+                {
+                    return StatusCode(StatusCodes.Status200OK, new { isSuccess = false, token = "" });
+                }
+                else
+                {
+                    // Si el usuario es válido, generar el JWT y devolverlo
+                    string token = _token.generarJWT(usuarioValido);
+
+                    return StatusCode(StatusCodes.Status200OK, new { isSuccess = true, token = token });
+                }
             }
             catch (Exception ex)
             {
+                
                 rsp.status = false;
                 rsp.msg = ex.Message;
             }
@@ -69,6 +88,12 @@ namespace SistemaVenta.API.Controllers
 
             try
             {
+                // Encriptar la clave del usuario
+                if (!string.IsNullOrEmpty(usuario.Clave))
+                {
+                    usuario.Clave = _token.encriptarSHA256(usuario.Clave);
+                }
+
                 rsp.status = true;
                 rsp.value = await _usuarioServicio.Crear(usuario);
             }

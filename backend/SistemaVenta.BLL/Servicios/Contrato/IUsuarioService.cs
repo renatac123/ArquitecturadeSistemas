@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SistemaVenta.Model;
 
 using SistemaVenta.DTO;
 
@@ -12,7 +13,7 @@ namespace SistemaVenta.BLL.Servicios.Contrato
     {
         Task<List<UsuarioDTO>> Lista();
 
-        Task<SesionDTO> ValidarCredenciales(string correo, string clave);
+        Task<Usuario> ValidarCredenciales(string correo, string clave); //antes era sesionDTO
 
         Task<UsuarioDTO> Crear(UsuarioDTO modelo);
 

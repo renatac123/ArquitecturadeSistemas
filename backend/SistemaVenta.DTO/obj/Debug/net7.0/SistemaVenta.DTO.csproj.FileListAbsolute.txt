@@ -9,3 +9,14 @@ C:\Users\marti\source\repos\APISistemaVenta\SistemaVenta.DTO\obj\Debug\net7.0\Si
 C:\Users\marti\source\repos\APISistemaVenta\SistemaVenta.DTO\obj\Debug\net7.0\refint\SistemaVenta.DTO.dll
 C:\Users\marti\source\repos\APISistemaVenta\SistemaVenta.DTO\obj\Debug\net7.0\SistemaVenta.DTO.pdb
 C:\Users\marti\source\repos\APISistemaVenta\SistemaVenta.DTO\obj\Debug\net7.0\ref\SistemaVenta.DTO.dll
+C:\Users\marti\source\repos\ArquitecturadeSistemas\backend\SistemaVenta.DTO\bin\Debug\net7.0\SistemaVenta.DTO.deps.json
+C:\Users\marti\source\repos\ArquitecturadeSistemas\backend\SistemaVenta.DTO\bin\Debug\net7.0\SistemaVenta.DTO.dll
+C:\Users\marti\source\repos\ArquitecturadeSistemas\backend\SistemaVenta.DTO\bin\Debug\net7.0\SistemaVenta.DTO.pdb
+C:\Users\marti\source\repos\ArquitecturadeSistemas\backend\SistemaVenta.DTO\obj\Debug\net7.0\SistemaVenta.DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marti\source\repos\ArquitecturadeSistemas\backend\SistemaVenta.DTO\obj\Debug\net7.0\SistemaVenta.DTO.AssemblyInfoInputs.cache
+C:\Users\marti\source\repos\ArquitecturadeSistemas\backend\SistemaVenta.DTO\obj\Debug\net7.0\SistemaVenta.DTO.AssemblyInfo.cs
+C:\Users\marti\source\repos\ArquitecturadeSistemas\backend\SistemaVenta.DTO\obj\Debug\net7.0\SistemaVenta.DTO.csproj.CoreCompileInputs.cache
+C:\Users\marti\source\repos\ArquitecturadeSistemas\backend\SistemaVenta.DTO\obj\Debug\net7.0\SistemaVenta.DTO.dll
+C:\Users\marti\source\repos\ArquitecturadeSistemas\backend\SistemaVenta.DTO\obj\Debug\net7.0\refint\SistemaVenta.DTO.dll
+C:\Users\marti\source\repos\ArquitecturadeSistemas\backend\SistemaVenta.DTO\obj\Debug\net7.0\SistemaVenta.DTO.pdb
+C:\Users\marti\source\repos\ArquitecturadeSistemas\backend\SistemaVenta.DTO\obj\Debug\net7.0\ref\SistemaVenta.DTO.dll

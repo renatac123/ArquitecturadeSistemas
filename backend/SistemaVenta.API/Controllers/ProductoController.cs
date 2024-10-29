@@ -3,10 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using SistemaVenta.BLL.Servicios.Contrato;
 using SistemaVenta.DTO;
 using SistemaVenta.API.Utilidad;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SistemaVenta.API.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize] //Con esto indico que solo pueden acceder usuarios autorizados y si quiero el tipo de autorizacion
     [ApiController]
     public class ProductoController : ControllerBase
     {

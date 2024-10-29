@@ -41,7 +41,7 @@ namespace SistemaVenta.BLL.Servicios
             }
         }
 
-        public async Task<SesionDTO> ValidarCredenciales(string correo, string clave)
+        public async Task<Usuario> ValidarCredenciales(string correo, string clave) //antes era task<SesionDTO>
         {
             try
             {
@@ -56,8 +56,8 @@ namespace SistemaVenta.BLL.Servicios
 
                 Usuario devolverUsuario = queryUsuario.Include(rol => rol.IdRolNavigation).First();
 
-                return _mapper.Map<SesionDTO>(devolverUsuario);
-
+                //return _mapper.Map<SesionDTO>(devolverUsuario);
+                return devolverUsuario;
             }
             catch
             {
