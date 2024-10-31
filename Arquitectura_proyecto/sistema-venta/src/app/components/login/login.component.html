@@ -1,0 +1,20 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="correo">Correo:</label>
+      <input id="correo" formControlName="correo" />
+      <div *ngIf="loginForm.get('correo')?.invalid && loginForm.get('correo')?.touched">
+        Correo es obligatorio y debe ser un email válido.
+      </div>
+    </div>
+    
+    <div>
+      <label for="clave">Clave:</label>
+      <input id="clave" type="password" formControlName="clave" />
+      <div *ngIf="loginForm.get('clave')?.invalid && loginForm.get('clave')?.touched">
+        La clave es obligatoria.
+      </div>
+    </div>
+  
+    <button type="submit">Iniciar Sesión</button>
+  </form>
+  
