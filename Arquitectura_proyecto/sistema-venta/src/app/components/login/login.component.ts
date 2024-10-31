@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service'; // Asegúrate de que esta ruta sea correcta
 import { LoginDTO } from '../../models/models'; // Asegúrate de definir este modelo
+import { Router } from '@angular/router'; // Importa Router
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { LoginDTO } from '../../models/models'; // Asegúrate de definir este mo
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) { // Agrega Router al constructor
     this.loginForm = this.fb.group({
       correo: ['', [Validators.required, Validators.email]],
       clave: ['', [Validators.required]],
@@ -30,7 +31,15 @@ export class LoginComponent implements OnInit {
       this.authService.iniciarSesion(loginData).subscribe(
         (response: any) => {
           console.log('Inicio de sesión exitoso', response);
-          // Maneja el inicio de sesión exitoso aquí (por ejemplo, redirigir)
+          
+                 // Guardar el token en sessionStorage
+                 if (response.isSuccess && response.token) {
+                  sessionStorage.setItem('authToken', response.token);
+                  // Redirigir a la pantalla de venta
+                  this.router.navigate(['/venta']);
+                }
+
+
         },
         (error: any) => {
           console.error('Error al iniciar sesión', error);

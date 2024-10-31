@@ -1,0 +1,53 @@
+.login-form {
+    max-width: 400px; /* Ajusta el ancho máximo del formulario */
+    margin: auto; /* Centra el formulario en la página */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde alrededor del formulario */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    background-color: #f9f9f9; /* Color de fondo */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Espaciado entre grupos de formulario */
+}
+
+label {
+    display: block; /* Asegura que la etiqueta ocupe todo el ancho */
+    margin-bottom: 5px; /* Espaciado debajo de la etiqueta */
+    font-weight: bold; /* Negrita para las etiquetas */
+}
+
+.form-input {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 10px; /* Espaciado interno para el campo */
+    border: 1px solid #ccc; /* Borde del campo de entrada */
+    border-radius: 4px; /* Bordes redondeados */
+    transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+.form-input:focus {
+    border-color: #007bff; /* Color del borde al enfocar */
+    outline: none; /* Elimina el contorno predeterminado */
+}
+
+.error-message {
+    color: red; /* Color del mensaje de error */
+    font-size: 12px; /* Tamaño de fuente más pequeño */
+    margin-top: 5px; /* Espaciado superior para el mensaje de error */
+}
+
+.submit-button {
+    width: 100%; /* Botón ocupa todo el ancho */
+    padding: 10px; /* Espaciado interno para el botón */
+    background-color: #007bff; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s; /* Transición suave para el fondo */
+}
+
+.submit-button:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el cursor por encima */
+}
