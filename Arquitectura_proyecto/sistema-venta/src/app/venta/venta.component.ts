@@ -15,6 +15,10 @@ interface ItemCarrito {
 export class VentaComponent implements OnInit {
   productos: Producto[] = [];
   carrito: ItemCarrito[] = [];
+  productoSeleccionado: Producto | null = null; // Variable para el producto seleccionado
+
+  displayedColumns: string[] = ['nombre', 'descripcionCategoria', 'stock', 'precio', 'seleccionar'];
+  carritoColumns: string[] = ['nombre', 'cantidad', 'precio', 'remover'];
 
   constructor(private productoService: ProductoService) { }
 
@@ -34,12 +38,16 @@ export class VentaComponent implements OnInit {
     );
   }
 
+  seleccionarProducto(producto: Producto): void {
+    this.productoSeleccionado = producto; // Guardamos el producto seleccionado
+  }
+
   agregarAlCarrito(producto: Producto): void {
     const item = this.carrito.find(item => item.nombre === producto.nombre);
     if (item) {
       item.cantidad++;
     } else {
-      this.carrito.push({ ...producto, cantidad: 1 });
+      this.carrito.push({ nombre: producto.nombre, precio: producto.precio, cantidad: 1 });
     }
   }
 

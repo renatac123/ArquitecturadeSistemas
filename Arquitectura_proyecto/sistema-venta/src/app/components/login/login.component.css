@@ -1,12 +1,26 @@
-.login-form {
-    max-width: 400px; /* Ajusta el ancho máximo del formulario */
-    margin: auto; /* Centra el formulario en la página */
-    padding: 20px; /* Espaciado interno */
-    border: 1px solid #ccc; /* Borde alrededor del formulario */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    background-color: #f9f9f9; /* Color de fondo */
+.login-container {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('https://png.pngtree.com/thumb_back/fw800/background/20230521/pngtree-commercial-electronics-store-of-many-screens-image_2667345.jpg') no-repeat center center fixed; /* Imagen centrada */
+    background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
+    height: 100vh; /* Altura completa de la ventana */
+    display: flex; /* Activa flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
 }
+
+.login-form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(249, 249, 249, 0.95);
+    backdrop-filter: blur(10px);
+}
+
 
 .form-group {
     margin-bottom: 15px; /* Espaciado entre grupos de formulario */

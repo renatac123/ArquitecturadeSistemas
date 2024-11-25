@@ -6,7 +6,10 @@ import { RouterModule, Routes } from '@angular/router'; // Importar RouterModule
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { VentaComponent } from './venta/venta.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 // Configuración de las rutas
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirige a login por defecto
@@ -20,13 +23,17 @@ const routes: Routes = [
     AppComponent,
     LoginComponent,
     VentaComponent,
-    // Otros componentes pueden ir aquí
+  
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes) // Configura el enrutamiento
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatButtonModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
